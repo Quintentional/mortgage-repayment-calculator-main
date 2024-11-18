@@ -2,60 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Frontend Mentor | Mortgage repayment calculator</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script defersrc="index.js"></script>
 </head>
 <body>
 
-  Mortgage Calculator
-  Clear All
+<div id="layout">
+<section id="calculator-side">
+  <h1>Mortgage Calculator</h1>
+  <a href="#">Clear All</a>
 
-  Mortgage Amount
+<form action="#">
+  <label id="amount-label" for="amount">Mortgage Amount</label>
+  <input type="number" id="amount" name="amount">
 
-  Mortgage Term
+<div class="term-rate">
+  <label id="term-label" for="term">Mortgage Term</label>
+  <input type="number" id="term" name="term">
 
-  Interest Rate
+  <label id="rate-label" for="rate">Interest Rate</label>
+  <input type="number" id="rate" name="rate">
+</div>
 
-  Mortgage Type
-  Repayment
-  Interest Only
-
-  Calculate Repayments
-
-  <!-- Empty results start -->
-
-  Results shown here
-
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
-
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  Your results
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+<div class="repayment-interest">
+  <label id="mortgage-type" for="repayment">Mortgage Type</label>
+  <div class="repayment-div">
+    <input type="radio" id="repayment" name="repayment">
+    <h3 class="repayment-h3">Repayment</h3>
   </div>
+  <div class="interest-div">
+    <input type="radio" id="interest" name="interest">
+    <h3 class="interest-h3">Interest Only</h3>
+  </div>
+</div>
+
+  <button id="calculate">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="#133041" d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"/></svg>
+    <h3 class="calculate-h3">Calculate Repayments</h3>
+  </button>
+</form>
+</section>
+
+<section id="results-side">
+    <!-- Empty results start -->
+
+<div id="results-empty">
+  <img src="./assets/images/illustration-empty.svg" alt="">
+  <h2 class="results-empty-h2">Results shown here</h2>
+
+  <p class="results-empty-p">
+    Complete the form and click “calculate repayments” to see what 
+  your monthly repayments would be.
+  </p>
+</div>
+  
+    <!-- Empty results end -->
+  
+    <!-- Completed results start -->
+  
+<div id="results-used">
+<div id="results-used-content">
+  <h2 class="results-used-h2">Your results</h2>
+  
+  <p class="results-used-p">
+    Your results are shown below based on the information you provided. 
+  To adjust the results, edit the form and click “calculate repayments” again.
+  </p>
+</div>
+
+<div id="results-used-repayments">
+  <div class="monthly">
+    <p class="monthly-p">
+      Your monthly repayments
+    </p>
+    <p class="monthly-amount">0</p>
+  </div>
+
+  <div class="term">
+    <div class="term-p">Total you'll repay over the term</div>
+    <div class="term-total">0</div>
+  </div>
+</div>
+</div>
+  
+    <!-- Completed results end -->
+</section>
+</div>
+  
 </body>
 </html>
