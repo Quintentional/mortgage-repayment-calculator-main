@@ -1,0 +1,624 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: hsl(202, 86%, 94%);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#layout {
+    width: 63rem;
+    min-height: 37.75rem;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+}
+
+#calculator-side {
+    width: 50%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    color: hsl(202, 55%, 16%);
+    margin: 2.5rem 0 2.5rem 2.5rem;
+}
+
+.clear {
+    color: hsl(200, 26%, 54%);
+    font-weight: 600;
+    margin: 3rem 2.5rem 0 0;
+}
+
+.mortgage-amount {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: hsl(200, 26%, 54%);
+    font-weight: 600;
+}
+
+#amount-label {
+    margin: 0 0 .75rem 2.5rem;
+}
+
+.amount-input-div {
+    width: 26.5rem;
+    height: 3.2rem;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid hsl(200, 26%, 54%);
+    border-radius: 7px;
+    margin: 0 0 0 2.5rem;
+}
+
+.amount-input-div:hover {
+    cursor: pointer;
+    border: 2px solid hsl(61, 70%, 52%)
+}
+
+.pounds {
+    width: 3rem;
+    height: 3.2rem;
+    background-color: hsl(202, 86%, 94%);
+    color:hsl(200, 26%, 54%);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amount-input-div:hover .pounds {
+    background-color: hsl(61, 70%, 52%);
+    color: hsl(201, 57%, 11%)
+}
+
+#amount {
+    width: 20rem;
+    height: 3.2rem;
+    border: none;
+    padding-left: 1rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: hsl(200, 24%, 40%);
+}
+#amount:focus {
+    border: none;
+    outline: none;
+}
+
+.error {
+    color: hsl(4, 69%, 50%);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.amount-error {
+    margin: .75rem 0 0 2.5rem;
+    display: none;
+}
+
+
+.term-rate {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.term-input-div {
+    width: 12.5rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid hsl(200, 26%, 54%);
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: .75rem 1.5rem .75rem 2.5rem;
+}
+
+.term-input-div:hover {
+    cursor: pointer;
+    border: 2px solid hsl(61, 70%, 52%)
+}
+
+#term-label {
+    margin-left: 2.5rem;
+}
+
+#term {
+    border: none;
+    width: 60%;
+    height: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    color: hsl(200, 24%, 40%);
+    padding: 1rem;
+}
+
+#term:focus, #rate:focus {
+    border: none;
+    outline: none;
+}
+
+.years {
+    width: 40%;
+    height: 3.2rem;
+    background-color: hsl(202, 86%, 94%);
+    color:hsl(200, 26%, 54%);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.term-input-div:hover .years {
+    background-color: hsl(61, 70%, 52%);
+    color: hsl(201, 57%, 11%)
+}
+
+.term-error {
+    margin: 0 0 1.25rem 2.5rem;
+    display: none;
+}
+
+.rate-input-div {
+    width: 12.5rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid hsl(200, 26%, 54%);
+    border-radius: 7px;
+    margin: .75rem 0 .75rem 0;
+}
+
+.rate-input-div:hover {
+    cursor: pointer;
+    border: 2px solid hsl(61, 70%, 52%)
+}
+
+#rate {
+    border: none;
+    width: 70%;
+    height: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    color: hsl(200, 24%, 40%);
+    padding: 1rem;
+}
+
+.percent {
+    width: 30%;
+    height: 3.2rem;
+    background-color: hsl(202, 86%, 94%);
+    color:hsl(200, 26%, 54%);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rate-input-div:hover .percent {
+    background-color: hsl(61, 70%, 52%);
+    color: hsl(201, 57%, 11%)
+}
+
+.rate-error {
+    display: none;
+}
+
+#mortgage-type {
+    margin: .75rem 0 1rem 2.5rem;
+}
+
+.repayment-interest {
+    display: flex;
+    flex-direction: column;
+}
+
+.interest-div, .repayment-div {
+    display: flex;
+    align-items: center;
+    width: 27rem;
+    height: 3.2rem;
+    border: 1px solid hsl(200, 26%, 54%);
+    border-radius: 7px;
+    padding-left: 1rem;
+}
+
+.repayment-div {
+    margin: 0 0 .65rem 2.5rem;
+}
+
+.repayment-div:hover {
+    border: 2px solid hsl(61, 70%, 52%);
+    cursor: pointer;
+}
+
+.repayment-div:hover .radio-button {
+    border: 2px solid hsl(61, 70%, 52%);
+}
+
+
+.interest-div {
+    margin-left: 2.5rem;
+}
+
+.interest-div:hover {
+    border: 2px solid hsl(61, 70%, 52%);
+    cursor: pointer;
+}
+
+.interest-div:hover .radio-button {
+    border: 2px solid hsl(61, 70%, 52%);
+}
+
+
+
+.radio-button {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    border: 2px solid hsl(200, 24%, 40%);
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.radio-button-selected {
+    width: .7rem;
+    height: .7rem;
+    background-color: hsl(61, 70%, 52%);
+    border-radius: 50%;
+    display: none;
+}
+
+.repayment-h3, .interest-h3 {
+    color: hsl(202, 55%, 16%);
+    margin-left: 2rem;
+}
+
+.radio-error {
+    margin: .75rem 0 0 2.5rem;
+    display: none;
+}
+
+#calculate {
+width: 20rem;
+height: 3.5rem;
+background-color: hsl(61, 70%, 52%);
+border: none;
+border-radius: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 2.5rem 0 0 2.5rem;
+}
+
+#calculate:hover {
+    cursor: pointer;
+    background-color: hsl(202, 55%, 16%);
+}
+
+#calculate:hover .calculate-h3 {
+    color: hsl(61, 70%, 52%);
+}
+
+#calculate:hover path {
+    fill: hsl(61, 70%, 52%);
+}
+
+.calculate-h3 {
+    color: hsl(202, 55%, 16%);
+    font-size: 18px;
+    font-weight: 700;
+    margin: .25rem 0 0 .5rem;
+    
+}
+
+
+#results-side {
+    width: 50%;
+    background-color: hsl(202, 55%, 16%);
+    border-radius: 0 0 0 80px;
+}
+
+#results-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#results-empty img {
+    width: 12rem;
+    margin: 8rem 0 1rem 0;
+}
+
+.results-empty-h2 {
+    color: hsl(0, 0%, 100%);
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.results-empty-p {
+    color: hsl(203, 41%, 72%);
+    font-weight: 500;
+    line-height: 1.5rem;
+    width: 27rem;
+}
+
+#results-used {
+    display: none;
+    flex-direction: column;
+}
+
+.results-used-h2 {
+    color: hsl(0, 0%, 100%);
+    margin: 3rem 0 1rem 2.5rem;
+}
+
+.results-used-p {
+    width: 27rem;
+    color: hsl(200, 26%, 54%);
+    line-height: 1.5;
+    font-weight: 500;
+    margin: 0 0 2.5rem 2.5rem;
+}
+
+#results-used-repayments {
+    background-color: hsl(201, 57%, 11%);
+    width: 26.5rem;
+    height: 18.5rem;
+    border-radius: 7px;
+    border-top: 4px solid hsl(61, 70%, 52%);
+    align-self: center;
+}
+
+.monthly {
+    position: relative;
+
+}
+
+
+
+.monthly::after {
+    content: '';
+    border-bottom: 2px solid hsla(200, 26%, 54%, 0.24);
+    width: 22.5rem;
+    position: absolute;
+    left: 2rem;
+}
+
+.monthly-p {
+    color: hsl(200, 26%, 54%);
+    margin: 2rem 0 .5rem 2rem;
+}
+
+.monthly-amount {
+    color: hsl(61, 70%, 52%);
+    font-size: 55px;
+    font-weight: 700;
+    margin: 0 0 1.5rem 2rem;
+}
+
+.term-p {
+    color:hsl(200, 26%, 54%);
+    margin: 4rem 0 1rem 2rem;
+
+}
+
+.term-total {
+    color: hsl(0, 0%, 100%);
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 2rem;
+}
+
+/* ---------------------------------------------------------------Mobile------------------------------------------------------- */
+
+@media(max-width: 375px) {
+
+    #layout {
+        width: 375px;
+        min-height: 1080px;
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 0;
+        overflow:visible;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #calculator-side {
+        width: 100%;
+    }
+    
+    .header {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    h1 {
+        margin: 1.5rem 0 .5rem 1.5rem;
+    }
+    
+    .clear {
+        margin: 0 2.5rem 0 1.5rem;
+    }
+    
+    #amount-label {
+        margin: 1.5rem 0 .75rem 1.5rem;
+    }
+    
+    .amount-input-div {
+        width: 19.5rem;
+        margin: 0 0 0 1.5rem;
+    }
+    
+    .pounds {
+        width: 5rem;
+    }
+    
+    
+    #amount {
+        width: 16.5rem;
+    }
+
+    
+    .term-rate {
+        flex-direction: column;
+        margin-top: 1.5rem;
+    }
+    
+    .term-input-div {
+        width: 19.5rem;
+        margin: .75rem 1.5rem 1.5rem 1.5rem;
+    }
+    
+    #term-label {
+        margin-left: 1.5rem;
+    }
+    
+    #term {
+        width: 75%;
+    }
+    
+    
+    .years {
+        width: 25%;
+    }
+    
+    #rate-label {
+        margin-left: 1.5rem;
+    }
+    
+    .rate-input-div {
+        width: 19.5rem;
+        margin: .75rem 0 1.5rem 1.5rem;
+    }
+    
+    #rate {
+        width: 82.5%;
+    }
+    
+    .percent {
+        width: 17.5%;
+    }
+    
+    #mortgage-type {
+        margin: 0 0 0 1.5rem;
+    }
+    
+    .interest-div, .repayment-div {
+        width: 19.5rem;
+    }
+    
+    .repayment-div {
+        margin: 1rem 0 .65rem 1.5rem;
+    }
+    
+    .interest-div {
+        margin-left: 1.5rem;
+    }  
+    
+    #calculate {
+    width: 19.5rem;
+    align-self: center;
+    margin: 1.5rem 0 2rem 0;
+    }
+    
+    #results-side {
+        width: 100%;
+        min-height: auto;
+        border-radius: 0 0 0 0;
+    }
+
+    #results-empty {
+        display: flex;
+    }
+    
+    
+    #results-empty img {
+        margin: 2rem 0 .75rem 0;
+    }
+    
+    .results-empty-p {
+        width: 22rem;
+        padding-bottom: 2rem;
+    }
+    
+    #results-used {
+        display: none;
+        flex-direction: column;
+        
+    }
+    
+    .results-used-h2 {
+        margin: 2rem 0 1rem 1.5rem;
+    }
+    
+    .results-used-p {
+        width: 22rem;
+        margin: 0 0 1.5rem 1.5rem;
+    }
+    
+    #results-used-repayments {
+        width: 19.5rem;
+        height: 14rem;
+        margin-bottom: 2rem;
+    }
+
+    
+    
+    .monthly::after {
+        width: 17.5rem;
+        left: 1rem;
+    }
+    
+    .monthly-p {
+        margin: 1.5rem 0 .5rem 1rem;
+    }
+    
+    .monthly-amount {
+        font-size: 40px;
+        font-weight: 600;
+        margin: 0 0 1rem 1rem;
+    }
+    
+    .term-p {
+        margin: 2.25rem 0 .5rem 1rem;
+    
+    }
+    
+    .term-total {
+        margin-left: 1rem;
+    }
+}

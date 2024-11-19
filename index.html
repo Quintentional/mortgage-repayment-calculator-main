@@ -5,38 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Frontend Mentor | Mortgage repayment calculator</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
   <script defersrc="index.js"></script>
 </head>
 <body>
 
 <div id="layout">
 <section id="calculator-side">
-  <h1>Mortgage Calculator</h1>
-  <a href="#">Clear All</a>
+  <div class="header">
+    <h1>Mortgage Calculator</h1>
+  <a class="clear" href="#">Clear All</a>
+  </div>
 
 <form action="#">
-  <label id="amount-label" for="amount">Mortgage Amount</label>
-  <input type="number" id="amount" name="amount">
+  <div class="mortgage-amount">
+    <label id="amount-label" for="amount">Mortgage Amount</label>
+  <div class="amount-input-div">
+    <div class="pounds">£</div>
+    <input type="text" id="amount" name="amount">
+  </div>
+  </div>
+  <p class="error amount-error">This field is required</p>
 
 <div class="term-rate">
-  <label id="term-label" for="term">Mortgage Term</label>
-  <input type="number" id="term" name="term">
+  <div class="term-div">
+    <label id="term-label" for="term">Mortgage Term</label>
+<div class="term-input-div">
+  <input type="text" id="term" name="term">
+  <div class="years">years</div>
+</div>
+<p class="error term-error">This field is required</p>
+  </div>
 
-  <label id="rate-label" for="rate">Interest Rate</label>
-  <input type="number" id="rate" name="rate">
+  <div class="rate-div">
+    <label id="rate-label" for="rate">Interest Rate</label>
+<div class="rate-input-div">
+  <input type="text" id="rate" name="rate">
+  <div class="percent">%</div>
+</div>
+<p class="error rate-error">This field is required</p>
+  </div>
 </div>
 
 <div class="repayment-interest">
   <label id="mortgage-type" for="repayment">Mortgage Type</label>
   <div class="repayment-div">
-    <input type="radio" id="repayment" name="repayment">
-    <h3 class="repayment-h3">Repayment</h3>
-  </div>
+      
+      <div class="radio-button repayment-button">
+        <div class="radio-button-selected repayment-button-selected"></div>
+      </div>
+      <h3 class="repayment-h3">Repayment</h3>
+</div>
   <div class="interest-div">
-    <input type="radio" id="interest" name="interest">
+      <div class="radio-button interest-button">
+        <div class="radio-button-selected interest-button-selected"></div>
+      </div>
     <h3 class="interest-h3">Interest Only</h3>
   </div>
-</div>
+  <p class="error radio-error">This field is required</p>
 
   <button id="calculate">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="#133041" d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"/></svg>
@@ -77,12 +105,12 @@
     <p class="monthly-p">
       Your monthly repayments
     </p>
-    <p class="monthly-amount">0</p>
+    <p class="monthly-amount">£</p>
   </div>
 
   <div class="term">
     <div class="term-p">Total you'll repay over the term</div>
-    <div class="term-total">0</div>
+    <div class="term-total">£</div>
   </div>
 </div>
 </div>
