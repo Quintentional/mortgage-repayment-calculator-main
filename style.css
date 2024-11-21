@@ -57,20 +57,28 @@ label {
     margin: 0 0 .75rem 2.5rem;
 }
 
+.input-div {
+    border: 1px solid hsl(200, 26%, 54%);
+}
+
+.input-div.focused {
+    border: 2px solid hsl(61, 70%, 52%);
+}
+
+.input-div:hover {
+    cursor: pointer;
+    border: 2px solid hsl(61, 70%, 52%);
+}
+
 .amount-input-div {
     width: 26.5rem;
     height: 3.2rem;
     display: flex;
     overflow: hidden;
-    border: 1px solid hsl(200, 26%, 54%);
     border-radius: 7px;
     margin: 0 0 0 2.5rem;
 }
 
-.amount-input-div:hover {
-    cursor: pointer;
-    border: 2px solid hsl(61, 70%, 52%)
-}
 
 .pounds {
     width: 3rem;
@@ -86,7 +94,12 @@ label {
     align-items: center;
 }
 
-.amount-input-div:hover .pounds {
+.input-div:hover > .indicator {
+    background-color: hsl(61, 70%, 52%);
+    color: hsl(201, 57%, 11%)
+}
+
+.input-div.focused .indicator {
     background-color: hsl(61, 70%, 52%);
     color: hsl(201, 57%, 11%)
 }
@@ -128,16 +141,10 @@ label {
     display: flex;
     align-items: center;
     overflow: hidden;
-    border: 1px solid hsl(200, 26%, 54%);
     border-radius: 7px;
     font-size: 16px;
     font-weight: 600;
     margin: .75rem 1.5rem .75rem 2.5rem;
-}
-
-.term-input-div:hover {
-    cursor: pointer;
-    border: 2px solid hsl(61, 70%, 52%)
 }
 
 #term-label {
@@ -189,15 +196,10 @@ label {
     display: flex;
     align-items: center;
     overflow: hidden;
-    border: 1px solid hsl(200, 26%, 54%);
     border-radius: 7px;
     margin: .75rem 0 .75rem 0;
 }
 
-.rate-input-div:hover {
-    cursor: pointer;
-    border: 2px solid hsl(61, 70%, 52%)
-}
 
 #rate {
     border: none;
@@ -241,23 +243,23 @@ label {
     flex-direction: column;
 }
 
-.interest-div, .repayment-div {
+.radio-div {
     display: flex;
     align-items: center;
     width: 27rem;
     height: 3.2rem;
-    border: 1px solid hsl(200, 26%, 54%);
+
     border-radius: 7px;
     padding-left: 1rem;
 }
 
-.repayment-div {
-    margin: 0 0 .65rem 2.5rem;
+.radio-div.focused {
+    border: 2px solid hsl(61, 70%, 52%);
+    background-color: hsla(61, 70%, 52%, 0.192);
 }
 
-.repayment-div:hover {
-    border: 2px solid hsl(61, 70%, 52%);
-    cursor: pointer;
+.repayment-div {
+    margin: 0 0 .65rem 2.5rem;
 }
 
 .repayment-div:hover .radio-button {
@@ -269,10 +271,6 @@ label {
     margin-left: 2.5rem;
 }
 
-.interest-div:hover {
-    border: 2px solid hsl(61, 70%, 52%);
-    cursor: pointer;
-}
 
 .interest-div:hover .radio-button {
     border: 2px solid hsl(61, 70%, 52%);
@@ -290,6 +288,10 @@ label {
     justify-content: center;
     align-items: center;
     position: absolute;
+}
+
+.radio-button.radio-focused {
+    border: 2px solid hsl(61, 70%, 52%);
 }
 
 .radio-button-selected {
@@ -319,7 +321,7 @@ border-radius: 30px;
 display: flex;
 align-items: center;
 justify-content: center;
-margin: 2.5rem 0 0 2.5rem;
+margin: 2.5rem 0 1rem 2.5rem;
 }
 
 #calculate:hover {
@@ -500,7 +502,7 @@ margin: 2.5rem 0 0 2.5rem;
     
     .term-input-div {
         width: 19.5rem;
-        margin: .75rem 1.5rem 1.5rem 1.5rem;
+        margin: .75rem 1.5rem .75rem 1.5rem;
     }
     
     #term-label {
@@ -522,7 +524,7 @@ margin: 2.5rem 0 0 2.5rem;
     
     .rate-input-div {
         width: 19.5rem;
-        margin: .75rem 0 1.5rem 1.5rem;
+        margin: .75rem 0 .75rem 1.5rem;
     }
     
     #rate {
@@ -534,7 +536,7 @@ margin: 2.5rem 0 0 2.5rem;
     }
     
     #mortgage-type {
-        margin: 0 0 0 1.5rem;
+        margin: .75rem 0 0 1.5rem;
     }
     
     .interest-div, .repayment-div {
@@ -548,11 +550,15 @@ margin: 2.5rem 0 0 2.5rem;
     .interest-div {
         margin-left: 1.5rem;
     }  
+
+    .error {
+        margin-left: 1.5rem;
+    }
     
     #calculate {
     width: 19.5rem;
     align-self: center;
-    margin: 1.5rem 0 2rem 0;
+    margin: 1.5rem auto 2rem auto;
     }
     
     #results-side {
